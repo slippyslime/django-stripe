@@ -10,12 +10,12 @@ Start-up instructions:
     You should end up at django-stripe/django-stripe/
     Execute the following command: pip install -r requirements.txt
 3. Applying migrations
-    Navigate to the djangostripe directory using the command: cd djangostripe/ 
-    You should end up at django-stripe/django-stripe/djangostripe/
-    Run the following command: python3.xx manage.py migrate
+   Create a superuser: Navigate to the djangostripe directory using the following command: cd djangostripe/
+   You should be at django-stripe/django-stripe/djangostripe/
+   Run the following command: python3.xx manage.py createsuperuser
+   Run the following command: python3.xx manage.py migrate
 4. Create items through the admin panel
-    Create a superuser: from django-stripe/django-stripe/django-stripe/djangostripe/ run the following command: python3.xx manage.py createsuperuser 
-    Start the server: from django-stripe/django-stripe/django-stripe/djangostripe/, run the following command: python3.xx manage.py runserver
-    Open a browser and go to localhost:8000/admin. Create items using the handy form to do so.
+   Start the server: at django-stripe/django-stripe/django-stripe/djangostripe/ run the following command: python3.xx manage.py runserver
+   Open a browser and navigate to localhost:8000/admin. Create items using the handy form to do so.
 5. Verify that the job is running correctly by going to localhost:8000
 
