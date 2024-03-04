@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% comment %} templates/products/item_detail.html {% endcomment %}
+
+{% block title %} Buy Item {% endblock title %}
+{% block content %}
+{% for item in items %}
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ item.name }}</h5>
+      <p class="card-text">{{ item.description }}</p>
+      <div class="card-text">
+        <h5 class="card-text">${{ item.price }}</h5>
+          <form>
+            <input type="button" value="Buy Now" onclick="getSessionId({{ item.id }});">
+              <script>
+    function getSessionId(itemId) {
+        const stripe = Stripe('pk_test_51Oo5YsHONtmivArNZKrU0i4bkl7qHaCdUoozBjlQvdhlpWS2mlbJScyTPk5MZ8AWtFN2VeNHU6mq6YfS9s269Yzd00Mfai1rMU');
+
+        fetchData(itemId)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((session) => {
+                    stripe.redirectToCheckout({ sessionId: session.sessionId })
+                })
+                .catch((err) => {
+                    alert(err);
+                });
+            return null;
+        }
+
+        async function fetchData(itemId) {
+            const url = `/buy/${itemId}`;
+            return await fetch(url, { method: "GET" })
+    }
+</script>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock content %}
