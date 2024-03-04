@@ -14,8 +14,8 @@ Start-up instructions:
    You should be at django-stripe/django-stripe/djangostripe/
    Run the following command: python3.xx manage.py createsuperuser
    Run the following command: python3.xx manage.py migrate
-4. Create items through the admin panel
+5. Create items through the admin panel
    Start the server: at django-stripe/django-stripe/django-stripe/djangostripe/ run the following command: python3.xx manage.py runserver
    Open a browser and navigate to localhost:8000/admin. Create items using the handy form to do so.
-5. Verify that the job is running correctly by going to localhost:8000
+7. Verify that the job is running correctly by going to localhost:8000
 
